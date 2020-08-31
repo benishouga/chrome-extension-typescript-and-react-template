@@ -10,7 +10,7 @@ export function useStorage() {
     storage,
     updateStorage: (item: { [key: string]: any }) => {
       const next = { ...storage, ...item };
-      chrome.storage.sync.set({ ...storage, ...item });
+      chrome.storage.sync.set(next);
       setStorage(next);
     },
   };
